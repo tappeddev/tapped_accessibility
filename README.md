@@ -17,7 +17,7 @@ dependencies:
   tapped_accessibility:
     git:
       url: https://github.com/tappeddev/tapped_accessibility.git
-      ref: v0.0.1
+      ref: v0.0.2
 ```
 
 Simply wrap your MaterialApp into the 
