@@ -26,7 +26,8 @@ part of '../tapped_accessibility.dart';
 ///           border: Border.all(color: Colors.blue, width: 2),
 ///           borderRadius: BorderRadius.circular(4),
 ///         ),
-///         padding: const EdgeInsets.all(4),
+///         horizontalPadding: 8.0,
+///         verticalPadding: 8.0,
 ///       ),
 ///       child: child!,
 ///     );
