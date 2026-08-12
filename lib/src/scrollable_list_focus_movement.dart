@@ -4,9 +4,9 @@ part of '../tapped_accessibility.dart';
 /// Make sure to use [ScrollableListFocusMovement.requiredCacheExtent] to get the correct cache extent if
 /// the hardware keyboard is used.
 class ScrollableListFocusMovement extends StatefulWidget {
-  static double? requiredCacheExtent(BuildContext context) {
+  static ScrollCacheExtent? requiredCacheExtent(BuildContext context) {
     if (HardwareKeyboardUsage.isEnabled(context)) {
-      return double.maxFinite;
+      return const ScrollCacheExtent.pixels(double.maxFinite);
     }
     return null;
   }
@@ -71,7 +71,7 @@ class _ScrollableListFocusMovementState
     final viewport = RenderAbstractViewport.maybeOf(viewportRenderObject);
 
     if (viewport is RenderViewport) {
-      final cacheExtent = viewport.cacheExtent;
+      final cacheExtent = viewport.scrollCacheExtent;
       final requiredExtent =
           ScrollableListFocusMovement.requiredCacheExtent(context);
 

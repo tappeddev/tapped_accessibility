@@ -35,7 +35,7 @@ class AccessibleArrowKeyScrollable extends StatelessWidget {
 
           scrollController.animateTo(
             correctedOffset,
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             curve: Curves.ease,
           );
         }

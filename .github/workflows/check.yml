@@ -24,8 +24,10 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_CHANNEL }}
+      - name: Pub get
+        run: flutter pub get
       - name: Analyze app
-        run: flutter pub get && flutter analyze
+        run: flutter analyze
 
   format:
     timeout-minutes: 5
@@ -38,5 +40,7 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_CHANNEL }}
+      - name: Pub get
+        run: flutter pub get
       - name: Check formatting
         run: find . -name "*.dart" ! -name "*.g.dart" ! -name "*.freezed.dart" ! -path '*/generated/*' ! -path '*/gen/*' | xargs dart format --set-exit-if-changed
